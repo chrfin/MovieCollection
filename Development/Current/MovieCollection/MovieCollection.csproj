@@ -29,7 +29,7 @@
     <SccLocalPath>SAK</SccLocalPath>
     <SccAuxPath>SAK</SccAuxPath>
     <SccProvider>SAK</SccProvider>
-    <PublishUrl>ftp://cfi-dev.at/httpdocs/setup/</PublishUrl>
+    <PublishUrl>D:\Projects\MovieCollection\Releases\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Web</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>
@@ -39,14 +39,14 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <InstallUrl>http://MovieCollection.cfi-dev.at/setup/</InstallUrl>
-    <SupportUrl>http://MovieCollection.cfi-dev.at</SupportUrl>
-    <ErrorReportUrl>https://www.assembla.com/spaces/MovieCollection/tickets</ErrorReportUrl>
+    <InstallUrl>http://moviecollection.codeplex.com/releases/clickonce/</InstallUrl>
+    <SupportUrl>http://moviecollection.codeplex.com</SupportUrl>
+    <ErrorReportUrl>http://moviecollection.codeplex.com/workitem/list/basic</ErrorReportUrl>
     <ProductName>MovieCollection</ProductName>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>31</ApplicationRevision>
+    <ApplicationRevision>33</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -342,6 +342,21 @@
     <Resource Include="Icons\Search.png" />
     <Resource Include="Icons\stop.png" />
     <Resource Include="Icons\folder_video.ico" />
+    <Content Include="Plugins\DataSources\SqlCeMovieDataSource.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Plugins\WebSources\HtmlAgilityPack.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Plugins\WebSources\ImdbServices.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Plugins\WebSources\IMDBWebSource.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Plugins\WebSources\OFDBWebSource.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\post-build.vbs" />
     <None Include="folder_video.ico">
       <Visible>True</Visible>
@@ -527,10 +542,7 @@
       <FileType>File</FileType>
     </PublishFile>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Plugins\DataSources\" />
-    <Folder Include="Plugins\WebSources\" />
-  </ItemGroup>
+  <ItemGroup />
   <Target Name="BeforePublish">
     <Touch Files="@(IntermediateAssembly)" />
     <CreateItem Include="@(AdditionalPublishFile)" AdditionalMetadata="TargetPath=%(RecursiveDir)%(Filename)%(extension);IsDataFile=false">
