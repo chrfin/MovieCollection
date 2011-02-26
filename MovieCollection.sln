@@ -24,9 +24,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IMovieDataSource", "IMovieD
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IMDBWebSource", "IMDBWebSource\IMDBWebSource.csproj", "{9C7AD9F1-4B57-4128-9A11-EE2A9C3302C8}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3rdParty", "3rdParty", "{24F6525D-2121-4460-97BF-AD4DD9921D8D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImdbServices", "..\..\3rdParty\ImdbService\ImdbServices\ImdbServices\ImdbServices.csproj", "{BA741466-EAAB-4AA3-99C4-A4313B9801F6}"
+EndProject
 Global
 	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 8
+		SccNumberOfProjects = 9
 		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
 		SccTeamFoundationServer = https://tfs.codeplex.com/tfs/tfs14
 		SccLocalPath0 = .
@@ -56,6 +60,10 @@ Global
 		SccProjectTopLevelParentUniqueName7 = MovieCollection.sln
 		SccProjectName7 = IMDBWebSource
 		SccLocalPath7 = IMDBWebSource
+		SccProjectUniqueName8 = ..\\..\\3rdParty\\ImdbService\\ImdbServices\\ImdbServices\\ImdbServices.csproj
+		SccProjectTopLevelParentUniqueName8 = MovieCollection.sln
+		SccProjectName8 = ../../3rdParty/ImdbService/ImdbServices/ImdbServices
+		SccLocalPath8 = ..\\..\\3rdParty\\ImdbService\\ImdbServices\\ImdbServices
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -138,6 +146,14 @@ Global
 		{9C7AD9F1-4B57-4128-9A11-EE2A9C3302C8}.Release|Any CPU.Build.0 = Release|Any CPU
 		{9C7AD9F1-4B57-4128-9A11-EE2A9C3302C8}.Release|x64.ActiveCfg = Release|Any CPU
 		{9C7AD9F1-4B57-4128-9A11-EE2A9C3302C8}.Release|x86.ActiveCfg = Release|Any CPU
+		{BA741466-EAAB-4AA3-99C4-A4313B9801F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA741466-EAAB-4AA3-99C4-A4313B9801F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA741466-EAAB-4AA3-99C4-A4313B9801F6}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{BA741466-EAAB-4AA3-99C4-A4313B9801F6}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{BA741466-EAAB-4AA3-99C4-A4313B9801F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA741466-EAAB-4AA3-99C4-A4313B9801F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA741466-EAAB-4AA3-99C4-A4313B9801F6}.Release|x64.ActiveCfg = Release|Any CPU
+		{BA741466-EAAB-4AA3-99C4-A4313B9801F6}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -148,6 +164,7 @@ Global
 		{61FB0350-EF07-43CD-8D82-8230056EE754} = {375D8F6F-02CF-4AB1-90CD-8DC44BC4C5B8}
 		{5623A7B3-AA70-4DD8-8D75-2DC9C753068B} = {375D8F6F-02CF-4AB1-90CD-8DC44BC4C5B8}
 		{9C7AD9F1-4B57-4128-9A11-EE2A9C3302C8} = {375D8F6F-02CF-4AB1-90CD-8DC44BC4C5B8}
+		{BA741466-EAAB-4AA3-99C4-A4313B9801F6} = {24F6525D-2121-4460-97BF-AD4DD9921D8D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		VisualSVNWorkingCopyRoot = 
