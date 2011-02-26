@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImdbServices", "..\ImdbServices\ImdbServices\ImdbServices.csproj", "{BA741466-EAAB-4AA3-99C4-A4313B9801F6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImdbServices Test (CSharp)", "ImdbServices Test (CSharp)\ImdbServices Test (CSharp).csproj", "{AA3DE136-D96A-470A-8E78-20C42F438CB9}"
+	ProjectSection(ProjectDependencies) = postProject
+		{BA741466-EAAB-4AA3-99C4-A4313B9801F6} = {BA741466-EAAB-4AA3-99C4-A4313B9801F6}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BA741466-EAAB-4AA3-99C4-A4313B9801F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA741466-EAAB-4AA3-99C4-A4313B9801F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA741466-EAAB-4AA3-99C4-A4313B9801F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA741466-EAAB-4AA3-99C4-A4313B9801F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA3DE136-D96A-470A-8E78-20C42F438CB9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA3DE136-D96A-470A-8E78-20C42F438CB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA3DE136-D96A-470A-8E78-20C42F438CB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA3DE136-D96A-470A-8E78-20C42F438CB9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

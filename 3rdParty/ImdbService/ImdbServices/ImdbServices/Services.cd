@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Imdb.Services" Collapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Struct Name="Imdb.Services.SearchState" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>ImdbServices.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Struct>
+      <Delegate Name="Imdb.Services.FoundMoviesEventHandler" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>ImdbServices.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+      <Delegate Name="Imdb.Services.MovieParsedEventHandler" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>ImdbServices.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAKwAhQYUAQEAABAIEAA6UCAAAADgAAgEEAAAgiAACA=</HashCode>
+      <FileName>ImdbServices.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Imdb.RequestState" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAEAA=</HashCode>
+      <FileName>ImdbServices.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

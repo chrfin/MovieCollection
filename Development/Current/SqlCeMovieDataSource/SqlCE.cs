@@ -57,7 +57,7 @@ namespace MovieDataSource
         /// <returns></returns>
         public static string GetConnectionString(string filename)
         {
-            return string.Format("Data Source={0};Max Database Size=4091;File Mode=Shared Read;Persist Security Info=False;", filename);
+            return string.Format("Data Source={0};Max Database Size=4091;File Mode=Exclusive;Persist Security Info=False;", filename);
         }
 
         /// <summary>
