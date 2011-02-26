@@ -46,7 +46,7 @@
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>33</ApplicationRevision>
+    <ApplicationRevision>34</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -342,21 +342,21 @@
     <Resource Include="Icons\Search.png" />
     <Resource Include="Icons\stop.png" />
     <Resource Include="Icons\folder_video.ico" />
-    <Content Include="Plugins\DataSources\SqlCeMovieDataSource.dll">
+    <None Include="Plugins\DataSources\SqlCeMovieDataSource.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Plugins\WebSources\HtmlAgilityPack.dll">
+    </None>
+    <None Include="Plugins\WebSources\HtmlAgilityPack.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Plugins\WebSources\ImdbServices.dll">
+    </None>
+    <None Include="Plugins\WebSources\ImdbServices.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Plugins\WebSources\IMDBWebSource.dll">
+    </None>
+    <None Include="Plugins\WebSources\IMDBWebSource.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Plugins\WebSources\OFDBWebSource.dll">
+    </None>
+    <None Include="Plugins\WebSources\OFDBWebSource.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    </None>
     <Content Include="Resources\post-build.vbs" />
     <None Include="folder_video.ico">
       <Visible>True</Visible>
