@@ -1,0 +1,584 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AddUserAlreadExistsCaption" xml:space="preserve">
+    <value>User already exists!</value>
+  </data>
+  <data name="AddUserAlreadExistsText" xml:space="preserve">
+    <value>The selected username is already in use!</value>
+  </data>
+  <data name="AddUserAlreadExistsTitle" xml:space="preserve">
+    <value>User already exists</value>
+  </data>
+  <data name="AddUserHeader" xml:space="preserve">
+    <value>Add new User...</value>
+  </data>
+  <data name="AddUserText" xml:space="preserve">
+    <value>Please enter the Name of the new User:</value>
+  </data>
+  <data name="ButtonAddMovie" xml:space="preserve">
+    <value>Add Movie</value>
+  </data>
+  <data name="ButtonRemoveMovie" xml:space="preserve">
+    <value>Delete Movie(s)</value>
+  </data>
+  <data name="ButtonWebSearch" xml:space="preserve">
+    <value>Search online...</value>
+  </data>
+  <data name="DeleteMoviesCaption" xml:space="preserve">
+    <value>Really delete the selected movies?</value>
+  </data>
+  <data name="DeleteMoviesFooter" xml:space="preserve">
+    <value>WARNING: This action can't be undo!</value>
+  </data>
+  <data name="DeleteMoviesText" xml:space="preserve">
+    <value>Are you shure you want to delete the {0} selected movies?</value>
+  </data>
+  <data name="DeleteMoviesTitle" xml:space="preserve">
+    <value>Really delete movies?</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="green_arrow1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\green_arrow1.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="green_arrow2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\green_arrow2.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="lang_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\america.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MenuItemAddUser" xml:space="preserve">
+    <value>Add new User...</value>
+  </data>
+  <data name="MenuItemExit" xml:space="preserve">
+    <value>Exit</value>
+  </data>
+  <data name="MenuItemFile" xml:space="preserve">
+    <value>File</value>
+  </data>
+  <data name="MenuItemLanguage" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="MenuItemNew" xml:space="preserve">
+    <value>New</value>
+  </data>
+  <data name="MenuItemOpen" xml:space="preserve">
+    <value>Open...</value>
+  </data>
+  <data name="MenuItemPlugins" xml:space="preserve">
+    <value>Online-Databases</value>
+  </data>
+  <data name="MenuItemUser" xml:space="preserve">
+    <value>User</value>
+  </data>
+  <data name="TASKDIALOG_BUTTON_CANCEL" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="TASKDIALOG_BUTTON_CLOSE" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="TASKDIALOG_BUTTON_NO" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="TASKDIALOG_BUTTON_OK" xml:space="preserve">
+    <value>Ok</value>
+  </data>
+  <data name="TASKDIALOG_BUTTON_YES" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+  <data name="TASKDIALOG_HIDEDETAILS" xml:space="preserve">
+    <value>Hide Details</value>
+  </data>
+  <data name="TASKDIALOG_MAININSTRUCTION" xml:space="preserve">
+    <value>Main Instructions</value>
+  </data>
+  <data name="TASKDIALOG_SHOWDETAILS" xml:space="preserve">
+    <value>Show Details</value>
+  </data>
+  <data name="TextBoxSearch" xml:space="preserve">
+    <value>Type here to search...</value>
+  </data>
+  <data name="ToolBarButtonAdd" xml:space="preserve">
+    <value>Add new Movie</value>
+  </data>
+  <data name="ButtonCancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="ButtonOk" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="ImageCover" xml:space="preserve">
+    <value>Click to change / Right-Click to remove...</value>
+  </data>
+  <data name="ImagesFilter" xml:space="preserve">
+    <value>*.jpg;*.jpeg;*.png;*.gif</value>
+  </data>
+  <data name="ImagesFilterText" xml:space="preserve">
+    <value>Images</value>
+  </data>
+  <data name="LabelCast" xml:space="preserve">
+    <value>Cast:</value>
+  </data>
+  <data name="LabelCountry" xml:space="preserve">
+    <value>Country:</value>
+  </data>
+  <data name="LabelDirector" xml:space="preserve">
+    <value>Director:</value>
+  </data>
+  <data name="LabelGenre" xml:space="preserve">
+    <value>Genre:</value>
+  </data>
+  <data name="LabelOriginalTitle" xml:space="preserve">
+    <value>Original Title:</value>
+  </data>
+  <data name="LabelRating" xml:space="preserve">
+    <value>Rating:</value>
+  </data>
+  <data name="LabelYear" xml:space="preserve">
+    <value>Year:</value>
+  </data>
+  <data name="NewMovieDefaultTitle" xml:space="preserve">
+    <value>New Movie</value>
+  </data>
+  <data name="TextBlockPlot" xml:space="preserve">
+    <value>Plot:</value>
+  </data>
+  <data name="WebSearchResultTitle" xml:space="preserve">
+    <value>Search Results for '{0}'</value>
+  </data>
+  <data name="TaskDialogNoOnlineResultsCaption" xml:space="preserve">
+    <value>Nothing found on {0}!</value>
+  </data>
+  <data name="TaskDialogNoOnlineResultsFooter" xml:space="preserve">
+    <value>HINT: May try another Web Source.</value>
+  </data>
+  <data name="TaskDialogNoOnlineResultsMain" xml:space="preserve">
+    <value>Nothing was found on the selected Web Source with the given name!</value>
+  </data>
+  <data name="TaskDialogNoOnlineResultsTitle" xml:space="preserve">
+    <value>Nothing found</value>
+  </data>
+  <data name="ButtonBrowse" xml:space="preserve">
+    <value>...</value>
+  </data>
+  <data name="ButtonBrowseToolTip" xml:space="preserve">
+    <value>Browse for new file...</value>
+  </data>
+  <data name="ButtonPlay" xml:space="preserve">
+    <value>Open</value>
+  </data>
+  <data name="CheckBoxSeen" xml:space="preserve">
+    <value>Seen</value>
+  </data>
+  <data name="DivX" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\DivX.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="dolby_digital" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\dolby_digital.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DTS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\DTS.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DVD" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\DVD.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FullHD" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\FullHD.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GroupBoxMediaFile" xml:space="preserve">
+    <value>Media File</value>
+  </data>
+  <data name="GroupBoxUserSettings" xml:space="preserve">
+    <value>User Settings</value>
+  </data>
+  <data name="h264" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\h264.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HD" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\HD.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LabelAudio" xml:space="preserve">
+    <value>Audio:</value>
+  </data>
+  <data name="LabelComment" xml:space="preserve">
+    <value>Comment:</value>
+  </data>
+  <data name="LabelVideo" xml:space="preserve">
+    <value>Video:</value>
+  </data>
+  <data name="MediaFilter" xml:space="preserve">
+    <value>*.mkv;*.avi;*.ifo;*.mpg;*.mpeg;*.divx;*.ts;*.ratDVD</value>
+  </data>
+  <data name="MediaFilterText" xml:space="preserve">
+    <value>Media Files</value>
+  </data>
+  <data name="MKV" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\MKV.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mp3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\mp3.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mpeg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\mpeg.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="wmv" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\wmv.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="wmvhd" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\wmvhd.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="x264" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\x264.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="xvid" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\xvid.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AutoSelectIfOnlyOne" xml:space="preserve">
+    <value>Auto select if only one Result</value>
+  </data>
+  <data name="ButtonAdd" xml:space="preserve">
+    <value>Add...</value>
+  </data>
+  <data name="ButtonDelete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="ExpanderCast" xml:space="preserve">
+    <value>Cast</value>
+  </data>
+  <data name="ExpanderGenre" xml:space="preserve">
+    <value>Genre</value>
+  </data>
+  <data name="InputBoxAddCastDefaultPerson" xml:space="preserve">
+    <value>New Actor</value>
+  </data>
+  <data name="InputBoxAddCastDefaultRole" xml:space="preserve">
+    <value />
+  </data>
+  <data name="InputBoxAddCastPromtPerson" xml:space="preserve">
+    <value>Please enter the new Actor:</value>
+  </data>
+  <data name="InputBoxAddCastPromtRole" xml:space="preserve">
+    <value>Please enter the role of the Actor (leave blank if unknown):</value>
+  </data>
+  <data name="InputBoxAddCastTitlePerson" xml:space="preserve">
+    <value>Add new Actor</value>
+  </data>
+  <data name="InputBoxAddCastTitleRole" xml:space="preserve">
+    <value>Role of the new Actor</value>
+  </data>
+  <data name="InputBoxAddGenreDefault" xml:space="preserve">
+    <value>New Genre</value>
+  </data>
+  <data name="InputBoxAddGenrePromt" xml:space="preserve">
+    <value>Please enter the new Genre:</value>
+  </data>
+  <data name="InputBoxAddGenreTitle" xml:space="preserve">
+    <value>Add new Genre</value>
+  </data>
+  <data name="MenuItemImport" xml:space="preserve">
+    <value>Import</value>
+  </data>
+  <data name="MenuItemImportFile" xml:space="preserve">
+    <value>File...</value>
+  </data>
+  <data name="MenuItemImportFolder" xml:space="preserve">
+    <value>Folder...</value>
+  </data>
+  <data name="TaskDialogImportFolderExceptionMain" xml:space="preserve">
+    <value>Error while importing '{0}'!</value>
+  </data>
+  <data name="TaskDialogImportFolderExceptionText" xml:space="preserve">
+    <value>There was an Exception while trying to import the file!</value>
+  </data>
+  <data name="TaskDialogImportFolderExceptionTitle" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="TaskDialogNoOnlineResultsAllSources" xml:space="preserve">
+    <value>all Web Sources</value>
+  </data>
+  <data name="TaskDialogNoOnlineResultsCheckbox" xml:space="preserve">
+    <value>Search on other Web Sources</value>
+  </data>
+  <data name="TaskDialogOnlineSearchExceptionMain" xml:space="preserve">
+    <value>Error while searching in {0}!</value>
+  </data>
+  <data name="TaskDialogOnlineSearchExceptionText" xml:space="preserve">
+    <value>There was an Exception while trying to search the web source!</value>
+  </data>
+  <data name="TaskDialogOnlineSearchExceptionTitle" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="StatusWindowTitleImporting" xml:space="preserve">
+    <value>Importing...</value>
+  </data>
+  <data name="StatusWindowTitleSearching" xml:space="preserve">
+    <value>Searching...</value>
+  </data>
+  <data name="LabelImporting" xml:space="preserve">
+    <value>Importing...</value>
+  </data>
+  <data name="LabelSearching" xml:space="preserve">
+    <value>Searching...</value>
+  </data>
+  <data name="StatusImportingFile" xml:space="preserve">
+    <value>Importing File {0} of {1}.</value>
+  </data>
+  <data name="StatusImportingFileContent" xml:space="preserve">
+    <value>Trying to find informations about '{0}'.</value>
+  </data>
+  <data name="StatusSearchingContent" xml:space="preserve">
+    <value>Trying to find informations about '{0}'.</value>
+  </data>
+  <data name="StatusSearchingFolder" xml:space="preserve">
+    <value>Searching in '{0}'.</value>
+  </data>
+  <data name="StatusSearchingFolderContent" xml:space="preserve">
+    <value>Trying to find all supported media files.</value>
+  </data>
+  <data name="StatusSearchingOnline" xml:space="preserve">
+    <value>Searching in {0}.</value>
+  </data>
+  <data name="TaskDialogImportingAutoSelectResultMain" xml:space="preserve">
+    <value>Auto select first online result?</value>
+  </data>
+  <data name="TaskDialogImportingAutoSelectResultText" xml:space="preserve">
+    <value>Should the first result of an online search be selected automaticaly?</value>
+  </data>
+  <data name="TaskDialogImportingAutoSelectResultTitle" xml:space="preserve">
+    <value>Auto select result</value>
+  </data>
+  <data name="LabelOpening" xml:space="preserve">
+    <value>Opening...</value>
+  </data>
+  <data name="OpeningLine1" xml:space="preserve">
+    <value>Opening the {0}!</value>
+  </data>
+  <data name="OpeningLine2" xml:space="preserve">
+    <value>Selected Source: '{0}'</value>
+  </data>
+  <data name="StatusWindowTitleOpening" xml:space="preserve">
+    <value>Opening...</value>
+  </data>
+  <data name="ExpanderFilter" xml:space="preserve">
+    <value>Filter</value>
+  </data>
+  <data name="MenuItemAdvancedView" xml:space="preserve">
+    <value>Advanced List View</value>
+  </data>
+  <data name="MenuItemSimpleView" xml:space="preserve">
+    <value>Simple List View</value>
+  </data>
+  <data name="MenuItemView" xml:space="preserve">
+    <value>View</value>
+  </data>
+  <data name="CheckBox1080p" xml:space="preserve">
+    <value>1080p</value>
+  </data>
+  <data name="CheckBox720p" xml:space="preserve">
+    <value>720p</value>
+  </data>
+  <data name="CheckBoxNonHD" xml:space="preserve">
+    <value>non HD</value>
+  </data>
+  <data name="CheckBoxResolution" xml:space="preserve">
+    <value>Resolution:</value>
+  </data>
+  <data name="CheckBoxSeenFilterToolTip" xml:space="preserve">
+    <value>Right click to ignore</value>
+  </data>
+  <data name="LabelLanguage" xml:space="preserve">
+    <value>Language:</value>
+  </data>
+  <data name="MenuItemShowToolTip" xml:space="preserve">
+    <value>Show Tool-Tip</value>
+  </data>
+  <data name="MenuItemShowYear" xml:space="preserve">
+    <value>Show Year</value>
+  </data>
+  <data name="TaskDialogImportSubFoldersMain" xml:space="preserve">
+    <value>Import Subfolders as Movies?</value>
+  </data>
+  <data name="TaskDialogImportSubFoldersText" xml:space="preserve">
+    <value>If Subfolders are imported as a Movie the name of the Folder is used as Title and the Media-File will link to the folder.</value>
+  </data>
+  <data name="TaskDialogImportSubFoldersTitle" xml:space="preserve">
+    <value>Import Subfolders?</value>
+  </data>
+  <data name="Unknown" xml:space="preserve">
+    <value>Unknown</value>
+  </data>
+  <data name="ButtonRemove" xml:space="preserve">
+    <value>Delete including Media-Files</value>
+  </data>
+  <data name="DeleteMovieErrorMain" xml:space="preserve">
+    <value>There was an Error while deleting the Mediafile!</value>
+  </data>
+  <data name="DeleteMovieErrorText" xml:space="preserve">
+    <value>The Exception occured while deleting '{0}'.</value>
+  </data>
+  <data name="DeleteMovieErrorTitle" xml:space="preserve">
+    <value>Error while deleteing Mediafile</value>
+  </data>
+  <data name="DeleteMoviesCheckBox" xml:space="preserve">
+    <value>Delete associated Mediafiles</value>
+  </data>
+  <data name="TextBoxDirectorsToolTip" xml:space="preserve">
+    <value>Directors are seperated by comma</value>
+  </data>
+  <data name="StatusBarInfoText" xml:space="preserve">
+    <value>{0} Movies</value>
+  </data>
+  <data name="StatusBarInfoTextFiltered" xml:space="preserve">
+    <value>{0} Movies ({1}) of {2} Movies ({3})</value>
+  </data>
+  <data name="User" xml:space="preserve">
+    <value>User:</value>
+  </data>
+  <data name="TaskDialogImportSubFoldersButtons" xml:space="preserve">
+    <value>Import Subfolders as Movies
+Imports each Subfolder as a Movie.|Search first Level for files/folders
+Folder will be searched for files/folders and also imported.|Search two Levels for files/folders
+Folders and their direct subfolders will be searched for files/folders and also imported.|Ignore Folders
+Only files direct in the selected folder are imported.</value>
+  </data>
+  <data name="TaskDialogMediaOfflineButtons" xml:space="preserve">
+    <value>Media files are offline
+Select this to show the stored media properties.|Media files are online
+Select this to enter a new media file.</value>
+  </data>
+  <data name="TaskDialogMediaOfflineMain" xml:space="preserve">
+    <value>Can not find the media file!</value>
+  </data>
+  <data name="TaskDialogMediaOfflineText" xml:space="preserve">
+    <value>The media file of this movie can not be found. If you don't have access to them you can select to only display the media properties stored in the collection.</value>
+  </data>
+  <data name="TaskDialogMediaOfflineTitle" xml:space="preserve">
+    <value>Media file not found</value>
+  </data>
+  <data name="TaskDialogUnhandledExceptionContent" xml:space="preserve">
+    <value>Please contact the development team about this problem.
+See the details for the exception details.</value>
+  </data>
+  <data name="TaskDialogUnhandledExceptionMain" xml:space="preserve">
+    <value>An unhandled Exception occured!</value>
+  </data>
+  <data name="TaskDialogUnhandledExceptionTitle" xml:space="preserve">
+    <value>Unhandled Exception</value>
+  </data>
+</root>
