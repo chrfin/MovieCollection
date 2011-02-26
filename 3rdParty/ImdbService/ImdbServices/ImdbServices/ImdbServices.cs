@@ -11,7 +11,7 @@ namespace Imdb
 {
     public class Services
     {
-        const string BaseUrl = "http://www.imdb.com/";
+        public const string BaseUrl = "http://www.imdb.com/";
 
         #region Patterns
         const string IMDB_ID_REGEX = @"(?<=\w\w)\d{7}";

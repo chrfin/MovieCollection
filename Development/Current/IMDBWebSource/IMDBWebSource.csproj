@@ -56,7 +56,6 @@
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ImdbServices, Version=0.9.0.26, Culture=neutral, PublicKeyToken=83a830048dace684, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -83,12 +82,13 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ImdbServices.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <None Include="Resources\imdb.gif" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\3rdParty\ImdbService\ImdbServices\ImdbServices\ImdbServices.csproj">
+      <Project>{BA741466-EAAB-4AA3-99C4-A4313B9801F6}</Project>
+      <Name>ImdbServices</Name>
+    </ProjectReference>
     <ProjectReference Include="..\IWebSource\IWebSource.csproj">
       <Project>{61FB0350-EF07-43CD-8D82-8230056EE754}</Project>
       <Name>IWebSource</Name>

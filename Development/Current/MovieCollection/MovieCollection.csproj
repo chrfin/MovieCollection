@@ -364,42 +364,6 @@
       <FileType>Assembly</FileType>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Plugins\DataSources\SqlCeMovieDataSource.dll">
-      <Visible>True</Visible>
-      <Group>Plugins</Group>
-      <TargetPath>Plugins\DataSources</TargetPath>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
-      <FileType>Assembly</FileType>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Plugins\WebSources\ImdbServices.dll">
-      <Visible>True</Visible>
-      <Group>Plugins</Group>
-      <TargetPath>Plugins\WebSources</TargetPath>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
-      <FileType>Assembly</FileType>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Plugins\WebSources\IMDBWebSource.dll">
-      <Visible>True</Visible>
-      <Group>Plugins</Group>
-      <TargetPath>Plugins\WebSources</TargetPath>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
-      <FileType>Assembly</FileType>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Plugins\WebSources\OFDBWebSource.dll">
-      <Visible>True</Visible>
-      <Group>Plugins</Group>
-      <TargetPath>Plugins\WebSources</TargetPath>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
-      <FileType>Assembly</FileType>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
@@ -562,6 +526,10 @@
       <IncludeHash>True</IncludeHash>
       <FileType>File</FileType>
     </PublishFile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Plugins\DataSources\" />
+    <Folder Include="Plugins\WebSources\" />
   </ItemGroup>
   <Target Name="BeforePublish">
     <Touch Files="@(IntermediateAssembly)" />
