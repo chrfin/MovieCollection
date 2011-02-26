@@ -1,0 +1,208 @@
+﻿<Window x:Class="MovieCollection.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:movieCollection="clr-namespace:MovieCollection"
+    Title="MovieCollection - V1.0 BETA" MinHeight="550" Height="670" Width="950" Icon="Icons/folder_video.png" x:Name="mainWindow"
+    WindowStartupLocation="CenterScreen" Closing="mainWindow_Closing" Closed="mainWindow_Closed" Loaded="mainWindow_Loaded" AllowDrop="True" Drop="mainWindow_Drop">
+    <Window.Resources>
+        <movieCollection:ImageToImageSourceConverter x:Key="imageConverter" />
+        <movieCollection:MovieToTitleConverter x:Key="titleConverter" />
+        <movieCollection:ToolTipDisplayConverter x:Key="toolTipConverter" />
+        <Image x:Shared="False" x:Key="NoCoverImage" Source="Icons/noImage.png" />
+
+        <Image x:Shared="False" x:Key="NEW_ICO" Source="Icons/Document.png" Width="24" Height="24" />
+        <Image x:Shared="False" x:Key="OPEN_ICO" Source="Icons/folder_blue.png" Width="24" Height="24" />
+        <Image x:Shared="False" x:Key="MAIN_ICO" Source="Icons/folder_video.png" Width="24" Height="24" />
+        <Image x:Shared="False" x:Key="EXIT_ICO" Source="Icons/shutdown.png" Width="24" Height="24" />
+        <Image x:Shared="False" x:Key="ADDUSER_ICO" Source="Icons/Symbol-Add.png" Width="24" Height="24" />
+        <Image x:Shared="False" x:Key="VIDEO_ICO" Source="Icons/xine.png" Width="24" Height="24" />
+        <Image x:Shared="False" x:Key="DELETE_ICO" Source="Icons/edit_remove.png" Width="16" Height="16" />
+        <Image x:Shared="False" x:Key="REMOVE_ICO" Source="Icons/stop.png" Width="16" Height="16" />
+
+        <ToolTip x:Key="listToolTip">
+            <movieCollection:MovieControl x:Name="movieControlToolTip" Width="500" Height="Auto" Margin="0 5 5 5" 
+                                      Movie="{Binding Path=., Mode=OneWay}" />
+        </ToolTip>
+        <ContextMenu x:Key="listContextMenu" Opened="ContextMenu_Opened">
+            <MenuItem x:Name="menuItemSeen" Header="{LocText MovieCollection::CheckBoxSeen}" IsCheckable="True" Click="menuItemSeen_Click" />
+            <Separator />
+            <MenuItem x:Name="menuItemDelete" Header="{LocText MovieCollection::ButtonDelete}" Click="menuItemDelete_Click" Icon="{StaticResource DELETE_ICO}" />
+            <MenuItem x:Name="menuItemRemove" Header="{LocText MovieCollection::ButtonRemove}" Click="menuItemRemove_Click" Icon="{StaticResource REMOVE_ICO}" />
+        </ContextMenu>
+        <DataTemplate x:Key="SimpleViewTemplate">
+            <Label Content="{Binding Path=., Converter={StaticResource titleConverter}}" Grid.Column="1" Grid.Row="0" FontWeight="Bold" 
+                   ToolTip="{Binding Source={StaticResource listToolTip}, Converter={StaticResource toolTipConverter}}" ContextMenu="{StaticResource listContextMenu}" />
+        </DataTemplate>
+        <DataTemplate x:Key="AdvancedViewTemplate">
+            <Grid ToolTip="{Binding Source={StaticResource listToolTip}, Converter={StaticResource toolTipConverter}}" ContextMenu="{StaticResource listContextMenu}" >
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="35"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <Image Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" 
+                               Source="{Binding Path=Cover, Converter={StaticResource imageConverter}, ConverterParameter={StaticResource NoCoverImage}}" 
+                               Stretch="Uniform" Margin="3" />
+                <Label Content="{Binding Path=., Converter={StaticResource titleConverter}}" Grid.Column="1" Grid.Row="0" FontWeight="Bold" />
+                <Label Content="{Binding Path=OriginalTitle}" Grid.Column="1" Grid.Row="1" 
+                               Foreground="Gray"/>
+            </Grid>
+        </DataTemplate>
+    </Window.Resources>
+    <Window.CommandBindings>
+        <CommandBinding Command="movieCollection:MainWindow.SourceLoadedCommand" CanExecute="CanExecuteSourceLoadedCommand" />
+    </Window.CommandBindings>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="24" />
+            <RowDefinition />
+            <RowDefinition Height="22" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="300" />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <Menu x:Name="MainMenu" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2">
+            <MenuItem x:Name="nemuItemFile" Header="{LocText MovieCollection::MenuItemFile}">
+                <MenuItem x:Name="menuItemNew" Header="{LocText MovieCollection::MenuItemNew}" Icon="{StaticResource NEW_ICO}" />
+                <MenuItem x:Name="menuItemOpen" Header="{LocText MovieCollection::MenuItemOpen}" Click="menuItemOpen_Click" Icon="{StaticResource OPEN_ICO}" />
+                <MenuItem x:Name="menuItemImport" Header="{LocText MovieCollection::MenuItemImport}" Icon="{StaticResource ADDUSER_ICO}" Command="movieCollection:MainWindow.SourceLoadedCommand">
+                    <MenuItem x:Name="menuItemImportFile" Header="{LocText MovieCollection::MenuItemImportFile}" Click="menuItemImportFile_Click" Icon="{StaticResource VIDEO_ICO}" />
+                    <MenuItem x:Name="menuItemImportFolder" Header="{LocText MovieCollection::MenuItemImportFolder}" Click="menuItemImportFolder_Click" Icon="{StaticResource MAIN_ICO}" />
+                </MenuItem>
+                <MenuItem x:Name="menuItemExit" Header="{LocText MovieCollection::MenuItemExit}" Click="menuItemExit_Click" Icon="{StaticResource EXIT_ICO}" />
+            </MenuItem>
+            <MenuItem x:Name="menuItemView" Header="{LocText MovieCollection::MenuItemView}">
+                <MenuItem x:Name="menuItemSimpleView" Header="{LocText MovieCollection::MenuItemSimpleView}" IsCheckable="True" Click="menuItemSimpleView_Click" />
+                <MenuItem x:Name="menuItemAdvancedView" Header="{LocText MovieCollection::MenuItemAdvancedView}" IsCheckable="True"  Click="menuItemAdvancedView_Click" />
+                <Separator />
+                <MenuItem x:Name="menuItemSimpleViewYear" Header="{LocText MovieCollection::MenuItemShowYear}" IsCheckable="True" Click="menuItemSimpleViewYear_Click" />
+                <MenuItem x:Name="menuItemViewToolTip" Header="{LocText MovieCollection::MenuItemShowToolTip}" IsCheckable="True" Click="menuItemViewToolTip_Click" />
+            </MenuItem>
+            <MenuItem x:Name="menuItemUser" Header="{LocText MovieCollection::MenuItemUser}" Command="movieCollection:MainWindow.SourceLoadedCommand">
+                <MenuItem x:Name="menuItemAddUser" Header="{LocText MovieCollection::MenuItemAddUser}" Click="menuItemAddUser_Click" Icon="{StaticResource ADDUSER_ICO}" />
+            </MenuItem>
+            <MenuItem x:Name="menuItemPlugins" Header="{LocText MovieCollection::MenuItemPlugins}" Command="movieCollection:MainWindow.SourceLoadedCommand" />
+            <MenuItem x:Name="menuItemLanguage" Header="{LocText MovieCollection::MenuItemLanguage}" />
+        </Menu>
+        <Grid x:Name="gridList" Grid.Column="0" Grid.Row="1" IsEnabled="False">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition />
+                <RowDefinition Height="32" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+
+            <TextBox x:Name="textBoxSearch" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Height="24" Text="{LocText MovieCollection::TextBoxSearch}" Foreground="LightGray" Margin="5 5 5 2.5" 
+                     GotFocus="textBoxSearch_GotFocus" LostFocus="textBoxSearch_LostFocus" TextChanged="textBoxSearch_TextChanged"/>
+            <Expander Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" x:Name="expanderFilter" Margin="5 2.5 5 2.5">
+                <Expander.Header>
+                    <CheckBox x:Name="checkBoxFilter" Content="{LocText MovieCollection::ExpanderFilter}" Click="checkBoxFilter_Click"  />
+                </Expander.Header>
+
+                <Grid Margin="5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+
+                    <CheckBox x:Name="checkBoxFilterSeen" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="0" Content="{LocText MovieCollection::CheckBoxSeen}" IsChecked="{x:Null}" 
+                              ToolTip="{LocText MovieCollection::CheckBoxSeenFilterToolTip}"
+                              Click="checkBoxFilterSeen_Click" MouseRightButtonUp="checkBoxFilterSeen_MouseRightButtonUp" />
+
+                    <CheckBox x:Name="checkBoxFilterResolution" Grid.Column="0" Grid.Row="1" Content="{LocText MovieCollection::CheckBoxResolution}" IsChecked="False"
+                              Click="checkBoxFilterResolution_Click" />
+                    <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="1" Margin="5 0 0 0">
+                        <CheckBox x:Name="checkBoxFilterNonHD" Content="{LocText MovieCollection::CheckBoxNonHD}" Margin="2.5 0 2.5 0" IsChecked="True" 
+                                  Click="checkBoxFilterNonHD_Click" />
+                        <CheckBox x:Name="checkBoxFilter720p" Content="{LocText MovieCollection::CheckBox720p}" Margin="2.5 0 2.5 0" IsChecked="True"
+                                  Click="checkBoxFilter720p_Click" />
+                        <CheckBox x:Name="checkBoxFilter1080p" Content="{LocText MovieCollection::CheckBox1080p}" Margin="2.5 0 2.5 0" IsChecked="True"
+                                  Click="checkBoxFilter1080p_Click" />
+                    </StackPanel>
+
+                    <CheckBox x:Name="checkBoxFilterLanguage" Grid.Column="0" Grid.Row="2" Content="{LocText MovieCollection::LabelLanguage}" IsChecked="False" VerticalAlignment="Center"
+                              Click="checkBoxFilterLanguage_Click" />
+                    <ComboBox x:Name="comboBoxFilterLanguage" Grid.Column="1" Grid.Row="2" />
+
+                    <CheckBox x:Name="checkBoxFilterGenre" Grid.Column="0" Grid.Row="3" Content="{LocText MovieCollection::LabelGenre}" IsChecked="False" VerticalAlignment="Center"
+                              Click="checkBoxFilterGenre_Click" />
+                    <ComboBox x:Name="comboBoxFilterGenre" Grid.Column="1" Grid.Row="3" />
+                </Grid>
+            </Expander>
+            <ListBox x:Name="listBoxMovies" Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2" Margin="5 2.5 5 2.5" SelectionMode="Extended" ItemTemplate="{StaticResource AdvancedViewTemplate}"
+                     SelectedItem="{Binding Movie, ElementName=movieControlMain, Mode=OneWayToSource}" SelectionChanged="listBoxMovies_SelectionChanged"
+                     KeyUp="listBoxMovies_KeyUp" />
+            <Button x:Name="buttonAddMovie" Grid.Column="0" Grid.Row="3" Margin="5 2.5 2.5 5" Click="buttonAddMovie_Click">
+                <Grid Width="130">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="24" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+
+                    <Image Source="Icons/edit_add.png" Width="16" Height="16" Grid.Column="0" Grid.Row="0" />
+                    <TextBlock Text="{LocText MovieCollection::ButtonAddMovie}" Grid.Column="1" Grid.Row="0" Margin="5 0 0 0" />
+                </Grid>
+            </Button>
+            <Button x:Name="buttonDeleteMovie" Grid.Column="1" Grid.Row="3" Margin="2.5 2.5 5 5" IsEnabled="False" Click="buttonDeleteMovie_Click">
+                <Grid Width="130">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="24" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+
+                    <Image Source="Icons/edit_remove.png" Width="16" Height="16" Grid.Column="0" Grid.Row="0" />
+                    <TextBlock Text="{LocText MovieCollection::ButtonRemoveMovie}" Grid.Column="1" Grid.Row="0" Margin="5 0 0 0" />
+                </Grid>
+            </Button>
+        </Grid>
+
+        <movieCollection:MovieControl x:Name="movieControlMain" Grid.Column="1" Grid.Row="1" Width="Auto" Height="Auto" Margin="0 5 5 5" IsEnabled="False"
+                                      SearchOnline="movieControlMain_SearchOnline" BorderBrush="Black" BorderThickness="1" />
+        <!--Movie="{Binding SelectedItem, ElementName=listBoxMovies, Mode=OneWay}" User="{Binding currentUser, ElementName=mainWindow, Mode=OneWay}"-->
+
+        <Grid Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="2">
+            <StatusBar x:Name="statusBarMain" BorderThickness="0 1 0 0" BorderBrush="Gray">
+                <StatusBar.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <Grid Margin="0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                        </Grid>
+                    </ItemsPanelTemplate>
+                </StatusBar.ItemsPanel>
+                
+                <StatusBarItem>
+                    <TextBlock x:Name="statusBarItemInfo" Margin="5 0 5 0" Width="Auto" />
+                </StatusBarItem>
+                <StatusBarItem Grid.Column="1">
+                    <TextBlock x:Name="statusBarItemUser" Text="{LocText MovieCollection::User}" />
+                </StatusBarItem>
+                <StatusBarItem Grid.Column="2">
+                    <TextBlock x:Name="statusBarItemUserName" FontWeight="Bold" />
+                </StatusBarItem>
+            </StatusBar>
+        </Grid>
+    </Grid>
+</Window>
