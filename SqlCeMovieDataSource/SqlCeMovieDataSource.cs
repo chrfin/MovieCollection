@@ -109,6 +109,13 @@ namespace MovieDataSource
         /// </summary>
         /// <value>The db connection.</value>
         internal SqlCeConnection DbConnection { get; private set; }
+        /// <summary>
+        /// Gets or sets the real filename.
+        /// </summary>
+        /// <value>
+        /// The real filename.
+        /// </value>
+        protected string RealFilename { get; set; }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="SqlCeMovieDataSource"/> class.
@@ -116,6 +123,29 @@ namespace MovieDataSource
         /// <param name="filename">The filename.</param>
         public SqlCeMovieDataSource(string filename)
         {
+            RealFilename = string.Empty;
+
+            bool exclusive = true;
+            if (Path.IsPathRooted(filename))
+            {
+                try
+                {
+                    DriveInfo driveInfo = new DriveInfo(filename[0].ToString());
+                    exclusive = (driveInfo.DriveType == DriveType.Fixed || driveInfo.DriveType == DriveType.Removable) ? false : true;
+                }
+                catch { }
+            }
+            if (exclusive)
+            {
+                RealFilename = filename;
+                string tempFilename = Path.Combine(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "MovieCollection"), Path.GetFileName(filename));
+                if (!Directory.Exists(Path.GetDirectoryName(tempFilename)))
+                    Directory.CreateDirectory(Path.GetDirectoryName(tempFilename));
+                File.Copy(filename, tempFilename);
+                File.Move(filename, filename + ".open");
+                filename = tempFilename;
+            }
+
             Filename = filename;
             DbConnection = new SqlCeConnection(SqlCE.GetConnectionString(filename));
             DbConnection.Open();
@@ -127,6 +157,20 @@ namespace MovieDataSource
             Users = new ObservableCollection<IUserProfile>();
             LoadUsers();
             Users.CollectionChanged += new NotifyCollectionChangedEventHandler(Users_CollectionChanged);
+        }
+
+        /// <summary>
+        /// Releases unmanaged resources and performs other cleanup operations before the
+        /// <see cref="SqlCeMovieDataSource"/> is reclaimed by garbage collection.
+        /// </summary>
+        ~SqlCeMovieDataSource()
+        {
+            if (RealFilename != string.Empty)
+            {
+                File.Move(Filename, RealFilename);
+                File.Delete(RealFilename + ".open");
+                File.Delete(Filename);
+            }
         }
 
         /// <summary>

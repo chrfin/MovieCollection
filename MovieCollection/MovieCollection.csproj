@@ -16,7 +16,7 @@
     <WarningLevel>4</WarningLevel>
     <StartupObject>MovieCollection.App</StartupObject>
     <IsWebBootstrapper>true</IsWebBootstrapper>
-    <ManifestCertificateThumbprint>964B38F5CD14D30216F5DE6A23310D3CB8CD954C</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>78094E4B42EDDC603F7421A66D21423E07DDFDCC</ManifestCertificateThumbprint>
     <ManifestKeyFile>MovieCollection_TemporaryKey.pfx</ManifestKeyFile>
     <GenerateManifests>true</GenerateManifests>
     <SignManifests>true</SignManifests>
@@ -29,7 +29,7 @@
     <SccLocalPath>SAK</SccLocalPath>
     <SccAuxPath>SAK</SccAuxPath>
     <SccProvider>SAK</SccProvider>
-    <PublishUrl>D:\Projects\MovieCollection_publish\</PublishUrl>
+    <PublishUrl>ftp://cfi-dev.at/httpdocs/setup/</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Web</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>
@@ -43,9 +43,10 @@
     <SupportUrl>http://MovieCollection.cfi-dev.at</SupportUrl>
     <ErrorReportUrl>https://www.assembla.com/spaces/MovieCollection/tickets</ErrorReportUrl>
     <ProductName>MovieCollection</ProductName>
+    <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
+    <WebPage>publish.htm</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <AutorunEnabled>true</AutorunEnabled>
-    <ApplicationRevision>29</ApplicationRevision>
+    <ApplicationRevision>30</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -108,6 +109,12 @@
     <PlatformTarget>x86</PlatformTarget>
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>MovieCollection_TemporaryKey.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AvalonControlsLibrary, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
@@ -245,6 +252,7 @@
     <EmbeddedResource Include="TaskDialog\EmulatedTaskDialog.resx">
       <DependentUpon>EmulatedTaskDialog.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="MovieCollection_TemporaryKey.pfx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -356,7 +364,6 @@
       <FileType>Assembly</FileType>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="MovieCollection_TemporaryKey.pfx" />
     <None Include="Plugins\DataSources\SqlCeMovieDataSource.dll">
       <Visible>True</Visible>
       <Group>Plugins</Group>
