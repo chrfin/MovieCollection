@@ -1,0 +1,25 @@
+﻿<Window x:Class="MovieCollection.StatusWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    x:Name="statusWindow" Height="110" Width="700" WindowStyle="None"
+    Title="{LocText MovieCollection::StatusWindowTitleSearching}" Icon="Icons\Search.png" FontSize="16" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Border BorderThickness="1" BorderBrush="Black">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <TextBlock x:Name="labelMode" Grid.Column="0" Grid.Row="0" Text="{LocText MovieCollection::LabelSearching}" Margin="5 5 5 2.5" HorizontalAlignment="Center" FontWeight="Bold"  />
+            <TextBlock x:Name="labelLine1" Grid.Column="0" Grid.Row="1" Text="{Binding Line1, ElementName=statusWindow}" Margin="5 2.5 5 2.5" />
+            <TextBlock x:Name="labelLine2" Grid.Column="0" Grid.Row="2" Text="{Binding Line2, ElementName=statusWindow}" Margin="5 2.5 5 2.5" />
+            <ProgressBar x:Name="progressBarProgress" Grid.Column="0" Grid.Row="3" IsIndeterminate="True" Minimum="0" Maximum="100"
+                         Value="{Binding Progress, ElementName=statusWindow}" Margin="5 2.5 5 5" Height="16"  />
+        </Grid>
+    </Border>
+</Window>
