@@ -25,6 +25,38 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IMDBWebSource", "IMDBWebSource\IMDBWebSource.csproj", "{9C7AD9F1-4B57-4128-9A11-EE2A9C3302C8}"
 EndProject
 Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 8
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://tfs.codeplex.com/tfs/tfs14
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = MovieCollection\\MovieCollection.csproj
+		SccProjectName1 = MovieCollection
+		SccLocalPath1 = MovieCollection
+		SccProjectUniqueName2 = IWebSource\\IWebSource.csproj
+		SccProjectTopLevelParentUniqueName2 = MovieCollection.sln
+		SccProjectName2 = IWebSource
+		SccLocalPath2 = IWebSource
+		SccProjectUniqueName3 = OFDBWebSource\\OFDBWebSource.csproj
+		SccProjectTopLevelParentUniqueName3 = MovieCollection.sln
+		SccProjectName3 = OFDBWebSource
+		SccLocalPath3 = OFDBWebSource
+		SccProjectUniqueName4 = MediaInfoNET\\MediaInfoNET.csproj
+		SccProjectName4 = MediaInfoNET
+		SccLocalPath4 = MediaInfoNET
+		SccProjectUniqueName5 = SqlCeMovieDataSource\\SqlCeMovieDataSource.csproj
+		SccProjectTopLevelParentUniqueName5 = MovieCollection.sln
+		SccProjectName5 = SqlCeMovieDataSource
+		SccLocalPath5 = SqlCeMovieDataSource
+		SccProjectUniqueName6 = IMovieDataSource\\IMovieDataSource.csproj
+		SccProjectTopLevelParentUniqueName6 = MovieCollection.sln
+		SccProjectName6 = IMovieDataSource
+		SccLocalPath6 = IMovieDataSource
+		SccProjectUniqueName7 = IMDBWebSource\\IMDBWebSource.csproj
+		SccProjectTopLevelParentUniqueName7 = MovieCollection.sln
+		SccProjectName7 = IMDBWebSource
+		SccLocalPath7 = IMDBWebSource
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Debug|x64 = Debug|x64
