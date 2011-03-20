@@ -1,0 +1,209 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4168EDBB-64A9-43A6-AF68-A42E628B27A1}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MovieCollection</RootNamespace>
+    <AssemblyName>MovieCollection</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Icons\folder_video.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="LocalizeExtension">
+      <HintPath>..\..\..\3rdParty\LocalizeExtension\LocalizeExtension.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAPICodePack">
+      <HintPath>..\..\..\3rdParty\WindowsApiCodePack\Microsoft.WindowsAPICodePack.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAPICodePack.Shell">
+      <HintPath>..\..\..\3rdParty\WindowsApiCodePack\Microsoft.WindowsAPICodePack.Shell.dll</HintPath>
+    </Reference>
+    <Reference Include="RibbonControlsLibrary, Version=4.0.0.11019, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.de.resx" />
+    <None Include="app.config" />
+    <None Include="app.manifest" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\DivX.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\Document.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\dolby_digital.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\DTS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\DVD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\edit_add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\edit_remove.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\folder_blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\folder_video.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\folder_video.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\FullHD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\h264.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\HD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\MKV.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\mp3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\mpeg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\noImage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\Search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\shutdown.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\stop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\Symbol-Add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\wmv.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\wmvhd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\x264.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\xine.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\xvid.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="folder_video.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
