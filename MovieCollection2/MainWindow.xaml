@@ -1,0 +1,48 @@
+﻿<r:RibbonWindow x:Class="MovieCollection.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:r="clr-namespace:Microsoft.Windows.Controls.Ribbon;assembly=RibbonControlsLibrary"
+        Title="MainWindow" Height="450" Width="525">
+    <r:RibbonWindow.Resources>
+        <ResourceDictionary>
+            <!--<ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/RibbonControlsLibrary;component/Themes/Office2007Blue.xaml"/>
+            </ResourceDictionary.MergedDictionaries>-->
+        </ResourceDictionary>
+    </r:RibbonWindow.Resources>
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        
+        <r:Ribbon x:Name="ribbon" Title="MovieCollection V2 Alpha" Grid.Row="0">
+            <r:Ribbon.ApplicationMenu>
+                <r:RibbonApplicationMenu>
+                    <r:RibbonApplicationMenu.FooterPaneContent>
+                        <DockPanel LastChildFill="False" >
+                            <r:RibbonButton DockPanel.Dock="Right" Margin="2" Label="{LocText MovieCollection::RibbonButtonExit}"
+                                            Click="buttonExit_Click"/>
+                            <r:RibbonButton DockPanel.Dock="Right" Margin="2" Label="{LocText MovieCollection::RibbonButtonSettings}" />
+                        </DockPanel>
+                    </r:RibbonApplicationMenu.FooterPaneContent>
+                </r:RibbonApplicationMenu>
+            </r:Ribbon.ApplicationMenu>
+            
+            <r:RibbonTab Header="{LocText MovieCollection::RibbonTabHome}" />
+            <r:RibbonTab Header="{LocText MovieCollection::RibbonTabImport}" />
+            <r:RibbonTab Header="{LocText MovieCollection::RibbonTabFilter}" />
+            <r:RibbonTab Header="{LocText MovieCollection::RibbonTabSettings}">
+                <r:RibbonGroup Header="{LocText MovieCollection::RibbonGroupLanguage}">
+                    <r:RibbonMenuButton x:Name="ribbonComboBoxLanguage" Width="150" Label="{LocText MovieCollection::RibbonGroupLanguage}">
+                        <r:RibbonGallery x:Name="ribbonGalleryLanguages" Width="150" SelectedValuePath="Content" MaxColumnCount="1">
+                            <r:RibbonGalleryCategory x:Name="ribbonGalleryCategoryLanguages" />
+                        </r:RibbonGallery>
+                    </r:RibbonMenuButton>
+                </r:RibbonGroup>
+            </r:RibbonTab>
+        </r:Ribbon>
+        <Button x:Name="buttonException" Content="THROW" Click="buttonException_Click" Grid.Row="1" />
+    </Grid>
+</r:RibbonWindow>
