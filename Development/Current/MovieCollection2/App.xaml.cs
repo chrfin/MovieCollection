@@ -21,10 +21,12 @@ namespace MovieCollection
         /// <exception cref="T:System.InvalidOperationException">More than one instance of the <see cref="T:System.Windows.Application"/> class is created per <see cref="T:System.AppDomain"/>.</exception>
         public App()
         {
+            AppDomain.CurrentDomain.UnhandledException += new UnhandledExceptionEventHandler(CurrentDomain_UnhandledException);
             DispatcherUnhandledException += new System.Windows.Threading.DispatcherUnhandledExceptionEventHandler(App_DispatcherUnhandledException);
             Startup += new StartupEventHandler(App_Startup);
             InitializeComponent();
         }
+
         /// <summary>
         /// Handles the Startup event of the App control.
         /// </summary>
@@ -38,6 +40,18 @@ namespace MovieCollection
             }
             catch (Exception exp) { ShowErrorDialog(exp); }
         }
+
+        /// <summary>
+        /// Handles the UnhandledException event of the CurrentDomain control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="System.UnhandledExceptionEventArgs"/> instance containing the event data.</param>
+        /// <remarks>Documented by ChrFin00, 2011-06-13</remarks>
+        private void CurrentDomain_UnhandledException(object sender, UnhandledExceptionEventArgs e)
+        {
+            ShowErrorDialog(e.ExceptionObject as Exception);
+        }
+
         /// <summary>
         /// Handles the DispatcherUnhandledException event of the App control.
         /// </summary>
