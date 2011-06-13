@@ -16,7 +16,7 @@
     <WarningLevel>4</WarningLevel>
     <StartupObject>MovieCollection.App</StartupObject>
     <IsWebBootstrapper>true</IsWebBootstrapper>
-    <ManifestCertificateThumbprint>78094E4B42EDDC603F7421A66D21423E07DDFDCC</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>A4EEB7F1CEB2EED8FB991FB0FC81F59A2ABCC2A1</ManifestCertificateThumbprint>
     <ManifestKeyFile>MovieCollection_TemporaryKey.pfx</ManifestKeyFile>
     <GenerateManifests>true</GenerateManifests>
     <SignManifests>true</SignManifests>
@@ -116,14 +116,12 @@
     <SignAssembly>false</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>MovieCollection_TemporaryKey.pfx</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AvalonControlsLibrary, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
     <Reference Include="LocalizeExtension, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
-    <Reference Include="PreEmptive.Attributes">
-      <HintPath>C:\Program Files (x86)\Microsoft Visual Studio 10.0\PreEmptive Solutions\Dotfuscator Community Edition\PreEmptive.Attributes.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>

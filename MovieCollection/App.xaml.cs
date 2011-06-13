@@ -16,8 +16,6 @@ namespace MovieCollection
         /// Application entry point.
         /// </summary>
         [System.STAThreadAttribute()]
-        [PreEmptive.Attributes.Setup(CustomEndpoint = "so-s.info/PreEmptive.Web.Services.Messaging/MessagingServiceV2.asmx")]
-        [PreEmptive.Attributes.Teardown()]
         public static void Main()
         {
             MovieCollection.App app = new App();
