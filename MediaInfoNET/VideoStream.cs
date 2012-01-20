@@ -144,12 +144,24 @@ namespace MediaInfoNET
         /// <value>The width.</value>
         /// <remarks>Documented by CFI, 2009-03-30</remarks>
         public int Width { get { return Methods.TryParseInt(MediaInfo[ParametersVideo.Width, Id]); } }
+		/// <summary>
+		/// Original Width in pixel.
+		/// </summary>
+		/// <value>The original width - sometimes different from width</value>
+		/// <remarks>Documented by jondbell, 2012-01-20</remarks>
+		public int OriginalWidth { get { return Methods.TryParseInt(MediaInfo[ParametersVideo.Width_Original, Id]); } }
         /// <summary>
         /// Height in pixel.
         /// </summary>
         /// <value>The height.</value>
         /// <remarks>Documented by CFI, 2009-03-30</remarks>
         public int Height { get { return Methods.TryParseInt(MediaInfo[ParametersVideo.Height, Id]); } }
+		/// <summary>
+		/// Original Height in pixel.
+		/// </summary>
+		/// <value>The height.</value>
+		/// <remarks>Documented by jondbell, 2012-01-20</remarks>
+		public int OriginalHeight { get { return Methods.TryParseInt(MediaInfo[ParametersVideo.Height_Original, Id]); } }
         /// <summary>
         /// Gets the pixel aspect ratio.
         /// </summary>
