@@ -1518,6 +1518,10 @@ namespace MediaInfoNET
         /// Width in pixel
         /// </summary>
         Width,
+		/// <summary>
+		/// Original Width in pixel
+		/// </summary>
+		Width_Original,
         /// <summary>
         /// Width with measurement (pixel)
         /// </summary>
@@ -1526,6 +1530,10 @@ namespace MediaInfoNET
         /// Height in pixel
         /// </summary>
         Height,
+		/// <summary>
+		/// Original Height in pixel
+		/// </summary>
+		Height_Original,
         /// <summary>
         /// Width with measurement (pixel)
         /// </summary>
