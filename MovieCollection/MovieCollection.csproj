@@ -10,13 +10,13 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>MovieCollection</RootNamespace>
     <AssemblyName>MovieCollection</AssemblyName>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WarningLevel>4</WarningLevel>
     <StartupObject>MovieCollection.App</StartupObject>
     <IsWebBootstrapper>true</IsWebBootstrapper>
-    <ManifestCertificateThumbprint>964B38F5CD14D30216F5DE6A23310D3CB8CD954C</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>A4EEB7F1CEB2EED8FB991FB0FC81F59A2ABCC2A1</ManifestCertificateThumbprint>
     <ManifestKeyFile>MovieCollection_TemporaryKey.pfx</ManifestKeyFile>
     <GenerateManifests>true</GenerateManifests>
     <SignManifests>true</SignManifests>
@@ -29,7 +29,8 @@
     <SccLocalPath>SAK</SccLocalPath>
     <SccAuxPath>SAK</SccAuxPath>
     <SccProvider>SAK</SccProvider>
-    <PublishUrl>D:\Projects\MovieCollection_publish\</PublishUrl>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <PublishUrl>D:\Projects\MovieCollection\Releases\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Web</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>
@@ -39,13 +40,14 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <InstallUrl>http://MovieCollection.cfi-dev.at/setup/</InstallUrl>
-    <SupportUrl>http://MovieCollection.cfi-dev.at</SupportUrl>
-    <ErrorReportUrl>https://www.assembla.com/spaces/MovieCollection/tickets</ErrorReportUrl>
+    <InstallUrl>http://moviecollection.codeplex.com/releases/clickonce/</InstallUrl>
+    <SupportUrl>http://moviecollection.codeplex.com</SupportUrl>
+    <ErrorReportUrl>http://moviecollection.codeplex.com/workitem/list/basic</ErrorReportUrl>
     <ProductName>MovieCollection</ProductName>
+    <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
+    <WebPage>publish.htm</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <AutorunEnabled>true</AutorunEnabled>
-    <ApplicationRevision>29</ApplicationRevision>
+    <ApplicationRevision>34</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -99,6 +101,7 @@
     <PlatformTarget>x86</PlatformTarget>
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
     <OutputPath>bin\x86\Release\</OutputPath>
@@ -109,6 +112,13 @@
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="AvalonControlsLibrary, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
     <Reference Include="LocalizeExtension, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
@@ -118,6 +128,7 @@
     </Reference>
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
@@ -140,12 +151,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ApplicationDefinition Include="App.xaml">
+    <Page Include="App.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
-    </ApplicationDefinition>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -245,6 +256,7 @@
     <EmbeddedResource Include="TaskDialog\EmulatedTaskDialog.resx">
       <DependentUpon>EmulatedTaskDialog.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="MovieCollection_TemporaryKey.pfx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -334,6 +346,21 @@
     <Resource Include="Icons\Search.png" />
     <Resource Include="Icons\stop.png" />
     <Resource Include="Icons\folder_video.ico" />
+    <None Include="Plugins\DataSources\SqlCeMovieDataSource.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Plugins\WebSources\HtmlAgilityPack.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Plugins\WebSources\ImdbServices.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Plugins\WebSources\IMDBWebSource.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Plugins\WebSources\OFDBWebSource.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <Content Include="Resources\post-build.vbs" />
     <None Include="folder_video.ico">
       <Visible>True</Visible>
@@ -351,43 +378,6 @@
       <Group>
       </Group>
       <TargetPath>Libraries</TargetPath>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
-      <FileType>Assembly</FileType>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="MovieCollection_TemporaryKey.pfx" />
-    <None Include="Plugins\DataSources\SqlCeMovieDataSource.dll">
-      <Visible>True</Visible>
-      <Group>Plugins</Group>
-      <TargetPath>Plugins\DataSources</TargetPath>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
-      <FileType>Assembly</FileType>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Plugins\WebSources\ImdbServices.dll">
-      <Visible>True</Visible>
-      <Group>Plugins</Group>
-      <TargetPath>Plugins\WebSources</TargetPath>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
-      <FileType>Assembly</FileType>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Plugins\WebSources\IMDBWebSource.dll">
-      <Visible>True</Visible>
-      <Group>Plugins</Group>
-      <TargetPath>Plugins\WebSources</TargetPath>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
-      <FileType>Assembly</FileType>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Plugins\WebSources\OFDBWebSource.dll">
-      <Visible>True</Visible>
-      <Group>Plugins</Group>
-      <TargetPath>Plugins\WebSources</TargetPath>
       <PublishState>Include</PublishState>
       <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
@@ -556,6 +546,7 @@
       <FileType>File</FileType>
     </PublishFile>
   </ItemGroup>
+  <ItemGroup />
   <Target Name="BeforePublish">
     <Touch Files="@(IntermediateAssembly)" />
     <CreateItem Include="@(AdditionalPublishFile)" AdditionalMetadata="TargetPath=%(RecursiveDir)%(Filename)%(extension);IsDataFile=false">

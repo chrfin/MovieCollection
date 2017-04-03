@@ -12,6 +12,33 @@ namespace MovieCollection
     /// </summary>
     public partial class App : Application
     {
+        /// <summary>
+        /// Application entry point.
+        /// </summary>
+        [System.STAThreadAttribute()]
+        public static void Main()
+        {
+            MovieCollection.App app = new App();
+            MainWindow window = new MainWindow();
+            app.Run(window);
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="App"/> class.
+        /// </summary>
+        /// <exception cref="T:System.InvalidOperationException">More than one instance of the <see cref="T:System.Windows.Application"/> class is created per <see cref="T:System.AppDomain"/>.</exception>
+        public App()
+        {
+            DispatcherUnhandledException += new System.Windows.Threading.DispatcherUnhandledExceptionEventHandler(Application_DispatcherUnhandledException);
+            Startup += new StartupEventHandler(Application_Startup);
+            InitializeComponent();
+        }
+
+        /// <summary>
+        /// Handles the Startup event of the Application control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="System.Windows.StartupEventArgs"/> instance containing the event data.</param>
         private void Application_Startup(object sender, StartupEventArgs e)
         {
             try
